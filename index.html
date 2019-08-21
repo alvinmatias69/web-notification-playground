@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Notification Playground</title>
+        <!-- Compiled and minified CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+        <!-- Compiled and minified JavaScript -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    </head>
+
+    <body class="container">
+        <h1>Notification Playground</h1>
+        <button class="btn waves-effect waves-light" onclick="requestNotification()"><i class="material-icons left">notifications_active</i>Request Notification</button>
+        <br />
+        Notification Status: <b id="NotifStatus"></b>
+
+        <h4>Options</h4>
+        <div id="form">
+            <div id="WebWorkerWrapper" class="valign-wrapper row" >
+                <div class="switch s2">
+                    <label>
+                        <input type="checkbox" id="WebWorker">
+                        <span class="lever"></span>
+                    </label>
+                </div>
+                Web worker
+            </div>
+        </div>
+
+        <br />
+        <button class="btn waves-effect waves-light" onclick="sendNotification()" id="NotificationSender"><i class="material-icons right" >send</i> Send Notif</button>
+
+        <script src="./options.js"></script>
+        <script src="./index.js"></script>
+    </body>
+</html>
