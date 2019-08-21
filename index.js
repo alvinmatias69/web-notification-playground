@@ -32,6 +32,10 @@ function sendNotification() {
     } else {
         const notification = new Notification("hello there", userOptions);
     }
+
+    if (checkOptions("LocalSound")) {
+        playSound();
+    }
 }
 
 function checkNotificationCapability() {
