@@ -35,9 +35,7 @@ function sendNotification() {
             const notification = new Notification("hello there", userOptions);
         }
 
-        if (checkOptions("LocalSound")) {
-            playSound();
-        }
+        startLocalServices();
     }, timeout);
 }
 
@@ -52,7 +50,7 @@ function checkNotificationCapability() {
         disableButtons();
     } else {
         setNotificationStatus(Notification.permission);
-        checkServiceWorkerCapability();
+        checkLocalCapabilities();
     }
 }
 
@@ -60,20 +58,6 @@ function disableButtons() {
     const buttons = document.getElementsByTagName("button");
     for (let i = 0; i < buttons.length; i++) {
         buttons[i].disabled = true;
-    }
-}
-
-function checkServiceWorkerCapability() {
-    if (!("serviceWorker" in navigator)) {
-        const checkbox = document.getElementById("WebWorker");
-        checkbox.disabled = true;
-
-        const warning = createWarning("WebWorker");
-
-        const wrapper = document.getElementById("WebWorkerWrapper");
-        wrapper.appendChild(warning);
-    } else {
-        navigator.serviceWorker.register('./sw.js');
     }
 }
 

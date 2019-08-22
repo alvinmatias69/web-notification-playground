@@ -38,6 +38,16 @@
                 </div>
                 Local Sound
             </div>
+
+            <div id="LocalVibrateWrapper" class="valign-wrapper row" >
+                <div class="switch s2">
+                    <label>
+                        <input type="checkbox" id="LocalVibrate">
+                        <span class="lever"></span>
+                    </label>
+                </div>
+                Local Vibrate
+            </div>
         </div>
 
         <div class="row">
@@ -50,6 +60,8 @@
 
         <button class="btn waves-effect waves-light" onclick="sendNotification()" id="NotificationSender"><i class="material-icons right" >send</i> Send Notif</button>
 
+        <script src="./local-option.js" ></script>
+        <script src="./vibrate.js" ></script>
         <script src="./sound.js" ></script>
         <script src="./options.js"></script>
         <script src="./index.js"></script>
