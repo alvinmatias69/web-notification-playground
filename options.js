@@ -43,6 +43,10 @@ const options = {
     tag: {
         value: "tag-heuer",
         description: "Merge"
+    },
+    vibrate: {
+        value: [200, 100, 200, 100, 200, 100, 400],
+        description: "Vibration"
     }
 };
 
