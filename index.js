@@ -24,18 +24,26 @@ function setNotificationStatus(status) {
 
 function sendNotification() {
     const userOptions = getOptions();
+    const timeout = getTimeout();
 
-    if (checkOptions("WebWorker")) {
-        navigator.serviceWorker.ready.then(reg => {
-            reg.showNotification("hello there", userOptions);
-        });
-    } else {
-        const notification = new Notification("hello there", userOptions);
-    }
+    setTimeout(() => {
+        if (checkOptions("WebWorker")) {
+            navigator.serviceWorker.ready.then(reg => {
+                reg.showNotification("hello there", userOptions);
+            });
+        } else {
+            const notification = new Notification("hello there", userOptions);
+        }
 
-    if (checkOptions("LocalSound")) {
-        playSound();
-    }
+        if (checkOptions("LocalSound")) {
+            playSound();
+        }
+    }, timeout);
+}
+
+function getTimeout() {
+    const time = document.getElementById("timeout").value;
+    return parseFloat(time) * 1000 || 0;
 }
 
 function checkNotificationCapability() {

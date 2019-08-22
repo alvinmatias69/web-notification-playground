@@ -26,7 +26,7 @@
                         <span class="lever"></span>
                     </label>
                 </div>
-                Web worker
+                Service Worker
             </div>
 
             <div id="LocalSoundWrapper" class="valign-wrapper row" >
@@ -38,10 +38,16 @@
                 </div>
                 Local Sound
             </div>
-
         </div>
 
-        <br />
+        <div class="row">
+            <div class="input-field col s4">
+                <i class="material-icons prefix">alarm</i>
+                <input id="timeout" type="number" class="validate" value="0">
+                <label for="timeout">Time until notification fired (seconds)</label>
+            </div>
+        </div>
+
         <button class="btn waves-effect waves-light" onclick="sendNotification()" id="NotificationSender"><i class="material-icons right" >send</i> Send Notif</button>
 
         <script src="./sound.js" ></script>
